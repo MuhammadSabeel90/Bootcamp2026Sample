@@ -2,7 +2,7 @@ name: bootcamp 2026 urdu
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:

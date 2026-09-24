@@ -1,0 +1,23 @@
+name: bootcamp 2026 urdu
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: installing Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 24
+
+      - name: installing surge
+        run: npm install --global surge
+
+      - name: deploying using surge
+        run: surge . bootcamp-2026-sample.surge.sh --token ${{ secrets.SURGE_TOKEN }}
